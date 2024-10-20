@@ -23,7 +23,7 @@ public class result extends JFrame implements ActionListener{
 		heading.setForeground(Color.BLACK);
 		add(heading);
 
-		JLabel sc =new JLabel("YOUR SCORE :  " + s);
+		JLabel sc =new JLabel("YOUR SCORE :  " + s + "/50");
 		sc.setBounds(20,280,500,45);
 		sc.setFont(new Font("Mongolian Baiti", Font.BOLD,30));
 		sc.setForeground(Color.BLACK);
