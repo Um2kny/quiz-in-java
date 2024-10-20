@@ -1,0 +1,52 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class result extends JFrame implements ActionListener{
+	JButton b1;
+	String naam;
+	int s;
+	result(String naam, int s){
+		this.s = s;
+		this.naam = naam;
+		getContentPane().setBackground(Color.WHITE);
+		setLayout(null);
+//image
+		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/profile.jpeg"));		
+		JLabel profile = new JLabel(i1);
+		profile.setBounds(0,0,600,200);
+		add(profile);
+//text
+		JLabel heading =new JLabel("THANKS FOR PLAYING " + naam );
+		heading.setBounds(20,220,600,45);
+		heading.setFont(new Font("Mongolian Baiti", Font.BOLD,30));
+		heading.setForeground(Color.BLACK);
+		add(heading);
+
+		JLabel sc =new JLabel("YOUR SCORE :  " + s);
+		sc.setBounds(20,280,500,45);
+		sc.setFont(new Font("Mongolian Baiti", Font.BOLD,30));
+		sc.setForeground(Color.BLACK);
+		add(sc);
+//buttons
+		b1 = new JButton("EXIT");
+		b1.setBounds(450,510,120,25);
+		//b1.setBackground(Color.WHITE);       //no need to change baackground colour written just for practice 
+		b1.setForeground(Color.BLACK);
+		b1.setFont(new Font("Mongolian Baiti",Font.BOLD,15));
+		b1.addActionListener(this);
+		add(b1);
+//frame
+		setSize(600,600);
+		setLocation(350,25);
+		setVisible(true);
+}
+	public void actionPerformed(ActionEvent ae){
+		if (ae.getSource() == b1){
+			setVisible(false);
+		}
+	}
+	public static void main(String[] args){
+		new result("USER",0);
+	}
+}
