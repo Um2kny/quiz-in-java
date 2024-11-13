@@ -3,11 +3,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class login extends JFrame implements ActionListener{	
-	JButton st, ru, ex;
+	JButton st, ru;
 	JTextField naam;
 	login(){
 		getContentPane().setBackground(Color.WHITE);
-		setLayout(null);
 //image
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/profile.jpeg"));		
 		JLabel profile = new JLabel(i1);
@@ -47,14 +46,13 @@ public class login extends JFrame implements ActionListener{
 		ru.addActionListener(this);
 		add(ru);
 
-		ex = new JButton("EXIT");
-		ex.setBounds(245,400,120,25);
-		//ex.setBackground(Color.WHITE);       //no need to change baackground colour written just for practice 
-		ex.setForeground(Color.BLACK);
-		ex.setFont(new Font("Mongolian Baiti",Font.BOLD,15));
-		ex.addActionListener(this);
-		add(ex);		
+		
 //frame
+
+		setLayout(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setTitle("General Quiz");
 		setSize(600,600);
 		setLocation(350,25);
 		setVisible(true);
@@ -69,9 +67,7 @@ public class login extends JFrame implements ActionListener{
 			setVisible(false);
 			new rules();
 		}
-		else if (ae.getSource() == ex){
-			setVisible(false);
-		}
+
 }
 
 	public static void main(String[] args){
